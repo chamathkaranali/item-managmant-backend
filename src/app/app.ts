@@ -40,10 +40,10 @@ export class App {
   deleteItem(itemCode: String) {
     if (confirm("Are you sure you want to delete this item?")) {
       
-        this.http.delete(`http://localhost:8080/delete/${itemCode}`).subscribe({
+        this.http.delete("http://localhost:8080/delete-by-id/" + itemCode).subscribe({
         next: (response) => {
           alert("Item deleted successfully!");
-          this.localData();
+          this.localData(); 
         },
         error: (error) => {
           console.error("Error deleting item", error);
