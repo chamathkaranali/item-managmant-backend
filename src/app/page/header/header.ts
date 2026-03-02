@@ -1,0 +1,13 @@
+import { Component } from '@angular/core';
+import { Search } from "../search/search";
+import { Update } from "../update/update";
+
+@Component({
+  selector: 'app-header',
+  imports: [Search, Update],
+  templateUrl: './header.html',
+  styleUrl: './header.css',
+})
+export class Header {
+
+}

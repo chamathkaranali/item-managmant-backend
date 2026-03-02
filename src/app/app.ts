@@ -1,11 +1,14 @@
 import { NgForOf } from '@angular/common';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Add } from "./page/add/add";
+import { Search } from "./page/search/search";
+import { Header } from "./page/header/header";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgForOf],
+  imports: [RouterOutlet, NgForOf, Add, Search, Header, RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,4 +1,4 @@
-<router-outlet></router-outlet>
+<app-header></app-header>
 <table>
   <thead>
     <tr>
@@ -20,8 +20,7 @@
       <td>{{item.qty}}</td>
 
       <td>
-        <button style="background-color: #f0ad4e; color: white; border: none; padding: 5px 10px; cursor: pointer; margin-right: 5px;" 
-                (click)="updateItem(item)">
+        <button routerLink="/Update" style="background-color: #f0ad4e; color: white; border: none; padding: 5px 10px; cursor: pointer; margin-right: 5px; ">
           Update
         </button>
       </td>
