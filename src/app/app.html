@@ -1,1 +1,38 @@
 <router-outlet></router-outlet>
+<table>
+  <thead>
+    <tr>
+      <th>Item  Code</th>
+      <th>Description</th>
+      <th>Pack Size</th>
+      <th>Unit Price</th>
+      <th>QTY</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of itemlist">
+      <td>{{item.itemCode}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.packSize}}</td>
+      <td>{{item.unitPrice}}</td>
+      <td>{{item.qty}}</td>
+
+      <td>
+        <button style="background-color: #f0ad4e; color: white; border: none; padding: 5px 10px; cursor: pointer; margin-right: 5px;" 
+                (click)="updateItem(item)">
+          Update
+        </button>
+      </td>
+      <td>
+        <button style="background-color: #d9534f; color: white; border: none; padding: 5px 10px; cursor: pointer;" 
+                (click)="deleteItem(item.itemCode)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
