@@ -5,6 +5,7 @@ import { Add } from "./page/add/add";
 import { Search } from "./page/search/search";
 import { Header } from "./page/header/header";
 import { Get } from "./page/get/get";
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ import { Get } from "./page/get/get";
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
-
-
+export class App implements OnInit{
+  ngOnInit(): void {
+    initFlowbite();
+  }
 }

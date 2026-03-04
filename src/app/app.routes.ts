@@ -3,8 +3,13 @@ import { Add } from './page/add/add';
 import { Search } from './page/search/search';
 import { Update } from './page/update/update';
 import { Header } from './page/header/header';
+import { Get } from './page/get/get';
 
 export const routes: Routes = [
+    {
+        path:'',
+        component:Get
+    },
     {
         path:'add',
         component:Add

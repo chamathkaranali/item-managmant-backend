@@ -2,15 +2,20 @@ import { NgForOf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Header } from "../header/header";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-get',
-  imports: [FormsModule, NgForOf],
+  imports: [FormsModule, NgForOf, Header, RouterLink],
   templateUrl: './get.html',
   styleUrl: './get.css',
 })
+
 export class Get {
   itemlist: any = null;
+  showModal: boolean = false;
+  selectedItem: any = null;
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {
     this.localData();
@@ -24,10 +29,22 @@ export class Get {
     });
   }
 
+  openUpdateModal(item: any) {
+    this.selectedItem = item;
+    this.showModal = true;
+  }
+
+  closeModal() {
+    this.showModal = false;
+    this.selectedItem = null;
+  }
+
   updateItem(item: any) {
+    console.log(item);
     this.http.put("http://localhost:8080/update", item).subscribe({
       next: (response) => {
         alert("Item updated successfully!");
+        this.closeModal();
         this.localData();
       },
       error: (error) => {
