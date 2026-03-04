@@ -1,4 +1,3 @@
-import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
 import { Add } from './page/add/add';
 import { Search } from './page/search/search';
